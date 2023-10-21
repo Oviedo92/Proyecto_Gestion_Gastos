@@ -6,28 +6,34 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Ganancia
+    public class Ganancia
     {
-        public string MesGanancia { get; set; }
-        public string AñoGanancia { get; set; }
-
-        public GastoTotalMensual GastoTotalMes { get; set; }
-
-        public decimal IngresosMensual{ get; set; }
-
-        public decimal TotalGanancia { get; set; }
-
         public Ganancia()
         {
         }
 
-        public Ganancia(string mesGanancia, string añoGanancia, GastoTotalMensual gastoTotalMes, decimal ingresosMensual, decimal totalGanancia)
+        public Ganancia(int mesGanancia, int añoGanancia, decimal ingresoMensual, decimal totalGastoG, decimal totalGanancia)
         {
             MesGanancia = mesGanancia;
             AñoGanancia = añoGanancia;
-            GastoTotalMes = gastoTotalMes;
-            IngresosMensual = ingresosMensual;
+            IngresoMensual = ingresoMensual;
+            TotalGastoG = totalGastoG;
             TotalGanancia = totalGanancia;
+        }
+
+        public int MesGanancia { get; set; }
+
+        public int AñoGanancia { get; set; }
+
+        public decimal IngresoMensual { get; set; }
+
+        public decimal TotalGastoG { get; set; }
+
+        public decimal TotalGanancia { get; set; }
+
+        public override string ToString()
+        {
+            return $"{MesGanancia};{AñoGanancia};{IngresoMensual};{TotalGastoG};{TotalGanancia}";
         }
     }
 }
